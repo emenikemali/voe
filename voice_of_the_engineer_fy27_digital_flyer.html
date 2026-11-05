@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cisco Collaboration Voice of the Engineer (VoE) FY27 Flyer</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 0.4in 0.4in 0.4in 0.4in;
+    @bottom-left {
+      content: "Cisco Collaboration Voice of the Engineer | Partner Technical Enablement";
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-size: 8.5pt;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  /* Header Banner */
+  .header-banner {
+    background: linear-gradient(135deg, #0b1f3a 0%, #005073 55%, #00bceb 100%);
+    color: #ffffff;
+    padding: 18px 22px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .header-badge {
+    display: inline-block;
+    background: rgba(0, 188, 235, 0.25);
+    border: 1px solid #00bceb;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .header-title {
+    font-size: 18pt;
+    font-weight: 800;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+  }
+  
+  .header-subtitle {
+    font-size: 10pt;
+    color: #d1ecf1;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+  
+  .header-desc {
+    font-size: 8.2pt;
+    color: #f1f5f9;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  /* CTA Button */
+  .cta-btn {
+    display: inline-block;
+    background-color: #00bceb;
+    color: #0b1f3a !important;
+    font-weight: bold;
+    font-size: 9pt;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Quick Info Cards */
+  .info-table {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #005073;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    font-size: 8pt;
+  }
+  
+  .info-table td {
+    padding: 6px 10px;
+  }
+  
+  .info-table strong {
+    color: #0b1f3a;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #0b1f3a;
+    border-bottom: 2px solid #00bceb;
+    padding-bottom: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Schedule Table */
+  table.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8pt;
+  }
+  
+  table.schedule-table th {
+    background-color: #0b1f3a;
+    color: #ffffff;
+    text-align: left;
+    padding: 5px 7px;
+    font-weight: bold;
+  }
+  
+  table.schedule-table td {
+    padding: 5px 7px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+  }
+  
+  table.schedule-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  
+  .date-badge {
+    font-weight: bold;
+    color: #005073;
+    white-space: nowrap;
+  }
+  
+  .special-badge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 6.5pt;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-left: 3px;
+  }
+
+  /* Mini CTA Banner on Page 1 */
+  .page1-cta {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 8px;
+  }
+
+  /* Two Column Cards Table */
+  table.cards-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+    margin-bottom: 8px;
+  }
+  
+  table.cards-table td.session-card-cell {
+    width: 50%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #00bceb;
+    border-radius: 4px;
+    padding: 8px 10px;
+    vertical-align: top;
+  }
+  
+  table.cards-table td.session-card-cell.highlight {
+    border-left-color: #005073;
+    background: #fcfdfe;
+  }
+  
+  .session-card-date {
+    font-size: 7.5pt;
+    font-weight: bold;
+    color: #0070ba;
+    margin-bottom: 2px;
+  }
+  
+  .session-card-title {
+    font-size: 9pt;
+    font-weight: bold;
+    color: #0b1f3a;
+    margin-bottom: 3px;
+    line-height: 1.2;
+  }
+  
+  .session-card-desc {
+    font-size: 7.8pt;
+    color: #475569;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  
+  .session-card-bullets {
+    margin: 0 0 0 12px;
+    padding: 0;
+    font-size: 7.4pt;
+    color: #334155;
+  }
+  
+  .session-card-bullets li {
+    margin-bottom: 2px;
+  }
+
+  /* Footer Callout */
+  .footer-callout {
+    background: linear-gradient(135deg, #0b1f3a 0%, #005073 100%);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 6px;
+  }
+  
+  .footer-callout h3 {
+    margin: 0 0 3px 0;
+    font-size: 11pt;
+    color: #ffffff;
+  }
+  
+  .footer-callout p {
+    margin: 0 0 8px 0;
+    font-size: 8pt;
+    color: #cbd5e1;
+  }
+
+  .footer-meta {
+    text-align: center;
+    font-size: 7pt;
+    color: #94a3b8;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="header-banner">
+    <div class="header-badge">Cisco Technical Enablement | Partner Community</div>
+    <div class="header-title">Collaboration Voice of the Engineer (VoE)</div>
+    <div class="header-subtitle">FY27 Technical Webinar Series & Architectural Roadmap</div>
+    <div class="header-desc">
+      The Cisco Collaboration Voice of the Engineer (VoE) webinar series delivers exclusive technical insights directly from Cisco engineering and product management teams. Designed specifically for Partner Systems Engineers, Solutions Architects, and Technical Practice Leads, each session provides deep architectural insights, deployment best practices, and live roadmap discussions across the Cisco Collaboration portfolio. Join us throughout FY27 for expert-led sessions covering Calling, Cloud Intelligence, CCUC, RoomOS, AI-powered collaboration, and more.
+    </div>
+    <div>
+      <a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" class="cta-btn">REGISTER FOR THE FULL SERIES →</a>
+    </div>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td style="width: 35%;"><strong>Target Audience:</strong> Partner SEs, Solutions Architects, Tech Leads</td>
+      <td style="width: 35%;"><strong>Schedule:</strong> Monthly (Thursdays / Special Editions) at 11:00 AM ET</td>
+      <td style="width: 30%;"><strong>Format:</strong> Live Webinar + Q&amp;A + On-Demand</td>
+    </tr>
+  </table>
+
+  <div class="section-title">FY27 Master Webinar Schedule</div>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th style="width: 17%;">Date &amp; Time</th>
+        <th style="width: 33%;">Webinar Session Title</th>
+        <th style="width: 35%;">Key Architectural Focus</th>
+        <th style="width: 15%; text-align: center;">Registration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date-badge">Nov 16, 2026<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Cisco 9800 Series Desk Phones Update</strong> <span class="special-badge">Special Edition</span></td>
+        <td>PhoneOS dual-platform agility, Wireless 9821 spotlight, live demos &amp; roadmap.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Nov 19, 2026<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Cisco 8200/8300 Series Secure Router &amp; CUBE</strong></td>
+        <td>Catalyst 8000 voice modules, vDSP resources, CUBE/LGW Media Proxy, SRST, SD-WAN.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Dec 17, 2026<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Cisco Cloud Intelligence for CUCM</strong></td>
+        <td>Control Hub cloud management, AI telemetry, hybrid calling bridge &amp; analytics.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Jan 21, 2027<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Cloud-Connected UC (CCUC) Updates</strong></td>
+        <td>Real-time operations, automated health monitoring, centralized alerting &amp; AI diagnostics.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Feb 18, 2027<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>UCM Calling Hypervisor &amp; Hardware Support</strong></td>
+        <td>Virtualization roadmap, AHV/ESXi support, hardware lifecycle &amp; cross-portfolio alignment.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Mar 18, 2027<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Cisco NFVIS-for-Collaboration Deep Dive</strong></td>
+        <td>Enterprise branch virtualization, platform sizing, Business Edition operations &amp; TAC tshoot.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">Apr 15, 2027<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>RoomOS 27 &amp; Interoperability Updates</strong></td>
+        <td>Cross-platform meeting join (MTR, Zoom, Google Meet), RoomOS 27 features &amp; management.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+      <tr>
+        <td class="date-badge">May 20, 2027<br><span style="font-size:7pt; color:#64748b;">11:00 AM ET</span></td>
+        <td><strong>Devices Customization with AI + Cinematic Meetings</strong></td>
+        <td>Multi-camera framing, dynamic cross-view, RoomOS xAPI macros, AI in-room automation.</td>
+        <td style="text-align: center;"><a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" style="color:#0070ba; font-weight:bold; text-decoration:none;">Register →</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page1-cta">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="font-size: 8.2pt; color: #334155;">
+          <strong>Ready to join the technical sessions?</strong> A single registration provides full access across all FY27 webinars.
+        </td>
+        <td style="text-align: right; width: 30%;">
+          <a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" class="cta-btn" style="padding:5px 12px; font-size:8pt;">Register on Cisco Xpert →</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="section-title">Upcoming Session Highlights &amp; Deep Dives (Part 1)</div>
+  <p style="font-size: 8.2pt; color: #64748b; margin-top: -4px; margin-bottom: 8px;">Detailed session descriptions, technical scopes, and architectural agendas for Q2 &amp; Q3 FY27 webinars.</p>
+
+  <table class="cards-table">
+    <tr>
+      <!-- Session 1 -->
+      <td class="session-card-cell highlight">
+        <div class="session-card-date">November 16, 2026 | 11:00 AM ET &bull; <span style="color:#0369a1;">SPECIAL EDITION</span></div>
+        <div class="session-card-title">Cisco 9800 Series Desk Phones Update</div>
+        <div class="session-card-desc">Mastering Modern Workplace Calling: Join technical leaders to explore architecture, deployment strategies, and latest PhoneOS capabilities across flagship desk and wireless endpoints.</div>
+        <ul class="session-card-bullets">
+          <li><strong>9800 Series Architecture:</strong> Dual-Platform Agility across Webex Calling &amp; Unified CM.</li>
+          <li><strong>Wireless Phone 9821 Spotlight:</strong> Enterprise Wi-Fi voice roaming &amp; rugged durability.</li>
+          <li><strong>Live Demonstrations:</strong> Action button customization, hot-desking &amp; QR sign-in.</li>
+          <li><strong>PhoneOS Roadmap:</strong> Future security enhancements and enterprise features.</li>
+        </ul>
+      </td>
+
+      <!-- Session 2 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">November 19, 2026 | 11:00 AM ET</div>
+        <div class="session-card-title">Cisco 8200/8300 Series Secure Router &amp; CUBE</div>
+        <div class="session-card-desc">Architectural deep dive on enterprise voice routing advancements across Catalyst 8200 and 8300 Series Secure Routers and Cisco Unified Border Element (CUBE).</div>
+        <ul class="session-card-bullets">
+          <li><strong>Portfolio Highlights:</strong> C8200 &amp; C8300 hardware platforms and voice scale.</li>
+          <li><strong>Voice Modules:</strong> Platform considerations for NIM and SM-X voice interfaces.</li>
+          <li><strong>Virtual DSPs (vDSP):</strong> Transcoding, conferencing &amp; media resource pools.</li>
+          <li><strong>CUBE &amp; Local Gateway:</strong> Media Proxy architectures &amp; Webex Calling.</li>
+          <li><strong>SRST &amp; SD-WAN:</strong> Survivable Remote Site Telephony and Catalyst SD-WAN.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <!-- Session 3 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">December 17, 2026 | 11:00 AM ET</div>
+        <div class="session-card-title">Cisco Cloud Intelligence for CUCM</div>
+        <div class="session-card-desc">Discover how Cloud Intelligence for CUCM modernizes on-premises deployments by connecting Unified CM to Webex Control Hub, enabling AI-powered telemetry and cloud agility.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Centralized Cloud Telemetry:</strong> Unified visibility for on-prem calling clusters.</li>
+          <li><strong>AI-Powered Insights:</strong> Predictive troubleshooting, health scores &amp; call analytics.</li>
+          <li><strong>Hybrid Architecture:</strong> Bridge on-premises investments with cloud innovation.</li>
+          <li><strong>Flexible Migration Path:</strong> Non-disruptive pathway toward Webex Calling.</li>
+        </ul>
+      </td>
+
+      <!-- Session 4 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">January 21, 2027 | 11:00 AM ET</div>
+        <div class="session-card-title">Cloud-Connected UC (CCUC) Updates</div>
+        <div class="session-card-desc">Learn how CCUC transforms day-to-day operations through real-time telemetry, automated health monitoring, centralized alerting, and AI-driven troubleshooting capabilities.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Operational Transformation:</strong> Real-time operational telemetry across UC clusters.</li>
+          <li><strong>Automated Health Monitoring:</strong> Proactive certificate expiration and service alerts.</li>
+          <li><strong>Centralized Alerting Engine:</strong> Unified notifications via Webex spaces and email.</li>
+          <li><strong>AI Troubleshooting:</strong> Accelerated root-cause analysis for call routing failures.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <div class="section-title">Upcoming Session Highlights &amp; Deep Dives (Part 2)</div>
+  <p style="font-size: 8.2pt; color: #64748b; margin-top: -4px; margin-bottom: 8px;">Detailed session descriptions, technical scopes, and architectural agendas for Q3 &amp; Q4 FY27 webinars.</p>
+
+  <table class="cards-table">
+    <tr>
+      <!-- Session 5 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">February 18, 2027 | 11:00 AM ET</div>
+        <div class="session-card-title">UCM Hypervisor &amp; Hardware Support Update</div>
+        <div class="session-card-desc">Review the latest virtualization, server hardware platforms, and future architecture roadmaps for Cisco Unified Communications Manager and cross-portfolio alignment.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Hypervisor Validation:</strong> Support matrix across VMware ESXi, Nutanix AHV, KVM.</li>
+          <li><strong>Server Platform Lifecycle:</strong> Cisco UCS C-Series M6 / M7 server certifications.</li>
+          <li><strong>Virtual Appliance Guidelines:</strong> Sizing, memory reservation, and storage I/O.</li>
+          <li><strong>Roadmap Synchronization:</strong> Release cadence across CUCM, CUC, and Expressway.</li>
+        </ul>
+      </td>
+
+      <!-- Session 6 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">March 18, 2027 | 11:00 AM ET</div>
+        <div class="session-card-title">Cisco NFVIS-for-Collaboration Deep Dive</div>
+        <div class="session-card-desc">Explore architecture, platform sizing, operational best practices, diagnostics, and TAC escalation guidance for virtualized Business Edition calling deployments.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Enterprise NFVIS Architecture:</strong> Virtualizing voice nodes on Enterprise Compute.</li>
+          <li><strong>Platform Sizing &amp; Resources:</strong> Optimal vCPU, RAM, and vNIC allocation rules.</li>
+          <li><strong>Operational Best Practices:</strong> Backup, snapshot recovery, and disaster recovery.</li>
+          <li><strong>TAC Escalation &amp; Diagnostics:</strong> Diagnostic bundles, core dump extraction &amp; triage.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <!-- Session 7 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">April 15, 2027 | 11:00 AM ET</div>
+        <div class="session-card-title">RoomOS 27 and Interoperability Updates</div>
+        <div class="session-card-desc">Explore the latest interoperability and roadmap innovations across Cisco devices, RoomOS, Microsoft Teams Rooms (MTR), Zoom Rooms, Google Meet, and Webex.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Multi-Platform Interoperability:</strong> Direct Guest Join &amp; native MTR on Cisco devices.</li>
+          <li><strong>RoomOS 27 Innovation:</strong> Modern UI overhaul, dynamic layouts &amp; enhanced security.</li>
+          <li><strong>Device Fleet Management:</strong> Control Hub workspace analytics &amp; mass updates.</li>
+          <li><strong>Peripherals Ecosystem:</strong> Audio/video peripheral integration and certification.</li>
+        </ul>
+      </td>
+
+      <!-- Session 8 -->
+      <td class="session-card-cell">
+        <div class="session-card-date">May 20, 2027 | 11:00 AM ET</div>
+        <div class="session-card-title">Device Customization with AI + Cinematic Meetings</div>
+        <div class="session-card-desc">Learn how RoomOS intelligence, AI-driven media processing, macros, and multi-camera solutions combine to create powerful next-generation collaboration experiences.</div>
+        <ul class="session-card-bullets">
+          <li><strong>Cinematic Meetings Architecture:</strong> Multi-camera intelligent framing &amp; switching.</li>
+          <li><strong>xAPI &amp; Macros:</strong> Room Navigator custom UI extensions &amp; in-room IoT controls.</li>
+          <li><strong>AI Workflow Automation:</strong> Integrating Webex AI Assistant &amp; third-party AI agents.</li>
+          <li><strong>Deployment Blueprints:</strong> High-impact boardroom and training room setups.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Footer Callout -->
+  <div class="footer-callout">
+    <h3>Reserve Your Seat Across the FY27 Series</h3>
+    <p>All sessions feature live engineering presentations, live architectural demonstrations, interactive Q&amp;A, and access to on-demand technical repositories.</p>
+    <div>
+      <a href="https://xpert.cisco.com/register/QV63JTFP5IPJ7C79" class="cta-btn" style="background-color: #00bceb; color: #0b1f3a; padding: 8px 20px; font-size: 9pt;">CLICK HERE TO REGISTER NOW →</a>
+    </div>
+    <div style="font-size: 7.5pt; margin-top: 5px; color: #94a3b8;">Direct Registration URL: https://xpert.cisco.com/register/QV63JTFP5IPJ7C79</div>
+  </div>
+
+  <div class="footer-meta">
+    Cisco Confidential | Designed exclusively for Cisco Partners, Systems Engineers, and Authorized Solutions Architects.<br>
+    Copyright &copy; 2026 Cisco Systems, Inc. and/or its affiliates. All rights reserved. | <a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" style="color:#64748b;">Privacy</a> | <a href="https://xpert.cisco.com" style="color:#64748b;">Cisco Xpert Community</a>
+  </div>
+
+</body>
+</html>
